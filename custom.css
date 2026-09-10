@@ -273,3 +273,29 @@ body.welcome-open { overflow:hidden; }
 /* Final intrinsic-media sizing: containers follow each asset instead of forcing one ratio. */
 .yanshi-unified-page figure>a{display:block;width:100%}.yanshi-unified-page .project-keyvisual img,.yanshi-unified-page .yanshi-wide-media img,.yanshi-unified-page .yanshi-narrow-media img,.yanshi-unified-page .yanshi-media-grid img{width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}.yanshi-unified-page .yanshi-video,.yanshi-unified-page .video-process-grid .yanshi-video,.yanshi-unified-page .yanshi-vertical{width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;background:#111}.yanshi-unified-page .portrait-grid figure,.yanshi-unified-page .yanshi-version-grid article{align-self:start}.yanshi-unified-page .portrait-grid img{max-height:min(76vh,920px)}.yanshi-unified-page .portrait-grid a{display:grid;place-items:center;background:var(--paper)}.yanshi-unified-page .yanshi-version-grid .yanshi-video,.yanshi-unified-page .video-process-grid.four .yanshi-video{max-height:min(72vh,820px)}.yanshi-unified-page .yanshi-version-grid article,.yanshi-unified-page .video-process-grid figure{display:flex;min-width:0;flex-direction:column}.yanshi-unified-page .yanshi-version-grid video,.yanshi-unified-page .video-process-grid video{align-self:center}.yanshi-unified-page .qa-strip img{width:100%;height:auto;max-height:none}.yanshi-unified-page .project-keyvisual{background:transparent}.yanshi-unified-page .project-keyvisual a{background:var(--paper)}
 @media(max-width:700px){.yanshi-unified-page .portrait-grid img,.yanshi-unified-page .yanshi-version-grid .yanshi-video,.yanshi-unified-page .video-process-grid.four .yanshi-video{max-height:none}}
+
+/* YANSHI narrative order: brand image, final cut, production interface, then evidence. */
+.yanshi-unified-page .project-keyvisual a{display:grid;place-items:center;padding:clamp(18px,3vw,44px)}
+.yanshi-unified-page .project-keyvisual img{width:auto;max-width:100%;max-height:min(82vh,980px)}
+.yanshi-unified-page .yanshi-final-section{padding-top:clamp(56px,7vw,96px)}
+.yanshi-unified-page .yanshi-final-grid{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);gap:clamp(34px,7vw,110px);align-items:start}
+.yanshi-unified-page .yanshi-final-grid figure{margin:0;min-width:0}
+.yanshi-unified-page .yanshi-final-video{display:block;width:100%;max-height:min(82vh,920px);object-fit:contain;background:#0d1118}
+.yanshi-unified-page .yanshi-final-grid figcaption{padding-top:10px;color:var(--muted);font:500 .55rem/1.4 Arial,sans-serif;letter-spacing:.1em}
+.yanshi-unified-page .yanshi-final-summary{padding-top:clamp(4px,2vw,28px)}
+.yanshi-unified-page .yanshi-final-summary h4{max-width:720px;margin:18px 0 24px;font-size:clamp(1.55rem,3vw,3.35rem);font-weight:500;line-height:1.16;letter-spacing:-.035em}
+.yanshi-unified-page .yanshi-final-summary>p:not(.yanshi-kicker){max-width:680px;margin:0;color:var(--muted);font-size:.86rem;line-height:1.9}
+.yanshi-unified-page .yanshi-demo-button{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:46px;margin-top:28px;padding:0 18px;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:999px;color:var(--ink);background:color-mix(in srgb,var(--surface) 68%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.16);backdrop-filter:blur(14px) saturate(1.16);box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 72%,transparent),0 8px 22px rgba(20,28,42,.07);font-size:.75rem;text-decoration:none;transition:color .22s ease,background .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease}
+.yanshi-unified-page .yanshi-demo-button small{color:var(--muted);font:500 .52rem/1 Arial,sans-serif;letter-spacing:.12em;transition:color .22s ease}
+.yanshi-unified-page .yanshi-demo-button:hover{color:#fff;border-color:#3157ff;background:#3157ff;transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 10px 26px rgba(49,87,255,.2)}
+.yanshi-unified-page .yanshi-demo-button:hover small{color:rgba(255,255,255,.78)}
+.yanshi-unified-page .yanshi-demo-button:focus-visible{outline:2px solid #3157ff;outline-offset:3px}
+.yanshi-unified-page .yanshi-final-meta{margin:clamp(36px,5vw,66px) 0 0;border-top:1px solid var(--ink)}
+.yanshi-unified-page .yanshi-final-meta>div{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
+.yanshi-unified-page .yanshi-final-meta dt{color:var(--muted);font:500 .52rem/1.5 Arial,sans-serif;letter-spacing:.1em}
+.yanshi-unified-page .yanshi-final-meta dd{margin:0;font-size:.74rem;line-height:1.6}
+.yanshi-unified-page .yanshi-interface-lead{padding-bottom:clamp(24px,4vw,52px);border-bottom:1px solid var(--line)}
+.yanshi-unified-page .yanshi-version-history{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:880px){.yanshi-unified-page .yanshi-final-grid{grid-template-columns:1fr}.yanshi-unified-page .yanshi-final-grid figure{max-width:560px}.yanshi-unified-page .yanshi-version-history{grid-template-columns:1fr}.yanshi-unified-page .project-keyvisual a{padding:14px}}
+@media(prefers-reduced-motion:reduce){.yanshi-unified-page .yanshi-demo-button{transition:none}}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.yanshi-unified-page .yanshi-demo-button{background:color-mix(in srgb,var(--surface) 94%,transparent)}}
