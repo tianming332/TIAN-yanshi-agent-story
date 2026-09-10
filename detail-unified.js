@@ -5,6 +5,7 @@
   var lastPart = pathParts[pathParts.length - 1] || "";
   var projectFolder = /\.html?$/i.test(lastPart) ? (pathParts[pathParts.length - 2] || "") : lastPart;
   var projectKey = projectFolder.replace(/^TIAN-/i, "").toLowerCase();
+  if (projectKey === "yanshi-agent-story") return;
   var configs = {
     "detection-brand": { pending: true },
     "hangzhou-linxin": {
@@ -23,8 +24,7 @@
       assets: ["01_品牌主视觉.png", "02_LOGO释义.png", "03_标准字体.png", "04_品牌色彩.png", "05_标志组合.png", "06_辅助图形.png", "07_品牌应用展示.png", "08_品牌理念场景.png", "09_品牌收尾视觉.png"]
     },
     "applied-project-07": { pending: true },
-    "applied-project-08": { pending: true },
-    "portfolio-project-17": { pending: true }
+    "applied-project-08": { pending: true }
   };
 
   var article = document.querySelector(".project-article");
