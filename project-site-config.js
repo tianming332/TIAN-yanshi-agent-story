@@ -20,12 +20,12 @@
   function language() { return window.tjmLanguage ? window.tjmLanguage.current() : "zh-hans"; }
   function localized(record) {
     var current = language();
-    return current === "en" ? record.en : (current === "zh-hant" ? record.hant : record.hans);
+    return current === "en" ? record.en : (current === "ja" ? record.hant : record.hans);
   }
   function setI18n(element, record) {
     element.setAttribute("data-i18n", "");
     element.setAttribute("data-i18n-hans", record.hans);
-    element.setAttribute("data-i18n-hant", record.hant);
+    element.setAttribute("data-i18n-ja", record.hant);
     element.setAttribute("data-i18n-en", record.en);
     element.textContent = localized(record);
   }
@@ -34,7 +34,7 @@
     var fallback = window.PORTFOLIO_META && window.PORTFOLIO_META[group] && window.PORTFOLIO_META[group][key] || key;
     return {
       hans: translated && translated["zh-hans"] || fallback,
-      hant: translated && translated["zh-hant"] || fallback,
+      hant: translated && translated["ja"] || fallback,
       en: translated && translated.en || String(key).toUpperCase()
     };
   }
@@ -45,7 +45,7 @@
     if (!item) return;
     var translation = window.WORK_TRANSLATIONS && window.WORK_TRANSLATIONS[projectId];
     var tagsHans = item.tags || [];
-    var tagsHant = translation && translation["zh-hant"] && translation["zh-hant"].tags || tagsHans;
+    var tagsHant = translation && translation["ja"] && translation["ja"].tags || tagsHans;
     var tagsEn = translation && translation.en && translation.en.tags || tagsHans;
     var labels = [];
     (item.directions || []).forEach(function (key) { labels.push(metaLabel("directions", key)); });
